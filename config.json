@@ -1,0 +1,29 @@
+{
+    "layer_configurations": [
+        {
+            "type": "LSTM",
+            "units": 128,
+            "activation": "tanh",
+            "return_sequences": false
+        },
+        {
+            "type": "Dense",
+            "units": 17,
+            "activation": "softmax"
+        }
+    ],
+    "early_stopping": {
+        "apply_early_stopping": true,
+        "monitor": "val_loss",
+        "min_delta": 0.001,
+        "patience": 32,
+        "mode": "min",
+        "restore_best_weights": true
+    },
+    "loss": "categorical_crossentropy",
+    "optimizer": "adam",
+    "epochs": 1024,
+    "batch_size": 64,
+    "top_k_predictions": 3,
+    "validation_split": 1
+}
